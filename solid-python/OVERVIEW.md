@@ -13,7 +13,7 @@ The goal of this repository is to help understand **why SOLID matters** and how 
 ## 📂 Project Structure
 
 ```
-solid-principles-python/
+solid-python/
 │
 ├── SRP/
 │   ├── bad.py
