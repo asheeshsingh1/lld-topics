@@ -46,6 +46,10 @@ def main():
     # 4. Initial Setup
     print("\n=== INITIALIZATION PHASE ===")
     admin_controller.initialize_parking_lot()
+
+    # 4.1. Parking Status
+    print("\n=== PARKING STATUS ===")
+    print(admin_controller.get_parking_status())
     
     # 5. Simulate Vehicle Entry
     print("\n=== ENTRY FLOW SIMULATION ===")
@@ -65,7 +69,7 @@ def main():
         print(exit_controller.generate_receipt_text(res1.ticket_id))
         
     print("\n=== SIMULATION COMPLETED ===")
-    
+
 
 if __name__ == "__main__":
     main()
