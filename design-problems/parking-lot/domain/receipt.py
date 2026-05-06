@@ -16,7 +16,7 @@ class PaymentReceipt:
     def __init__(self, ticket_id: str, total_fee: float):
         self.receipt_id = str(uuid.uuid4())
         self.ticket_id = ticket_id
-        self.exit_time = datetime.now()
+        self.exit_time = datetime.time()
         self.total_fee = total_fee
         self.payment_status = self.PaymentStatus.PENDING
 

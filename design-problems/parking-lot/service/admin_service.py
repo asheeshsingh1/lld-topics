@@ -61,7 +61,7 @@ class AdminService:
     def update_pricing_rule(self, vehicle_type: Vehicle.VehicleType, rate_per_hour: float, flat_rate: float):
         rule = self._pricing_rule_repository.find_by_vehicle_type(vehicle_type)
         if rule:
-            rule.update_rates(rate_per_hour, flat_rate)
+            rule.update_rate(hourly_rate=rate_per_hour, flat_rate=flat_rate)
             self._pricing_rule_repository.update(rule)
 
     def get_parking_status(self):

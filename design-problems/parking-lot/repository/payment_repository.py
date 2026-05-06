@@ -1,5 +1,5 @@
 from typing import List, Optional, Dict
-from ..domain.payment import Payment
+from domain.payment import Payment
 
 class PaymentRepository:
     def __init__(self):
@@ -7,10 +7,10 @@ class PaymentRepository:
         self._ticket_to_payments: Dict[str, List[str]] = {}
 
     def save(self, payment: Payment) -> Payment:
-        self._payments[payment.id] = payment
+        self._payments[payment.payment_id] = payment
         if payment.ticket_id not in self._ticket_to_payments:
             self._ticket_to_payments[payment.ticket_id] = []
-        self._ticket_to_payments[payment.ticket_id].append(payment.id)
+        self._ticket_to_payments[payment.ticket_id].append(payment.payment_id)
         return payment
 
     def find_by_id(self, payment_id: str) -> Optional[Payment]:
@@ -24,8 +24,8 @@ class PaymentRepository:
         return list(self._payments.values())
 
     def update(self, payment: Payment):
-        if payment.id in self._payments:
-            self._payments[payment.id] = payment
+        if payment.payment_id in self._payments:
+            self._payments[payment.payment_id] = payment
 
     def delete(self, payment_id: str):
         payment = self._payments.pop(payment_id, None)

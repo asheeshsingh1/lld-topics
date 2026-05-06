@@ -23,5 +23,5 @@ class EntryController:
             return EntryResult(False, None, None, f"No available slots for {vehicle_type.value}")
         
         vehicle = Vehicle(license_plate, vehicle_type)
-        ticket = self._ticket_service.generate_ticket(vehicle, slot.id)
-        return EntryResult(True, ticket.id, slot.id, "Entry successful")
+        ticket = self._ticket_service.generate_ticket(vehicle, slot.slot_id)
+        return EntryResult(True, ticket.ticket_id, slot.slot_id, "Entry successful")

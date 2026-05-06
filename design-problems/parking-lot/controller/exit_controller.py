@@ -40,7 +40,7 @@ class ExitController:
         self._slot_service.release_slot(ticket.slot_id)
         self._ticket_service.deactivate_ticket(ticket_id)
         
-        return ExitResult(True, receipt.id, fee, "Exit successful")
+        return ExitResult(True, receipt.receipt_id, fee, "Exit successful")
 
     def generate_receipt_text(self, ticket_id: str) -> str:
         ticket = self._ticket_service.get_ticket(ticket_id)

@@ -14,7 +14,7 @@ class PricingService:
             raise ValueError(f"No pricing rule for {vehicle_type}")
         
         flat_fee = rule.flat_rate
-        hourly_fee = self._calculate_hourly_fee(ticket, rule.rate_per_hour)
+        hourly_fee = self._calculate_hourly_fee(ticket, rule.hourly_rate)
         return min(flat_fee, hourly_fee)
 
     def _calculate_hourly_fee(self, ticket: Ticket, rate_per_hour: float) -> float:

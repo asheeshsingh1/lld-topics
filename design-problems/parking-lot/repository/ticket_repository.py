@@ -6,7 +6,7 @@ class TicketRepository:
         self._tickets: Dict[str, Ticket] = {}
 
     def save(self, ticket: Ticket) -> Ticket:
-        self._tickets[ticket.id] = ticket
+        self._tickets[ticket.ticket_id] = ticket
         return ticket
 
     def find_by_id(self, ticket_id: str) -> Optional[Ticket]:

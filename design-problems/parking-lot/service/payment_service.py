@@ -12,14 +12,14 @@ class PaymentService:
 
     def process_payment(self, ticket_id: str, amount: float) -> bool:
         print(f"[SERVICE] Processing payment for ticket: {ticket_id} amount: {amount}")
-        payment = Payment(ticket_id, amount, Payment.PaymentGateway.RAZORPAY)
+        payment = Payment(ticket_id, amount, PaymentGatewayAdapter)
         self._payment_repository.save(payment)
         
         success = self._default_gateway.pay(ticket_id, amount)
         if success:
-            payment.mark_as_success()
+            payment.mark_success()
         else:
-            payment.mark_as_failed()
+            payment.mark_failed()
         
         self._payment_repository.update(payment)
         return success

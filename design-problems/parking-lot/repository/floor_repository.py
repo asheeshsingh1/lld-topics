@@ -7,8 +7,8 @@ class FloorRepository:
         self._floor_number_to_id: Dict[int, str] = {}
 
     def save(self, floor: Floor) -> Floor:
-        self._floors[floor.id] = floor
-        self._floor_number_to_id[floor.floor_number] = floor.id
+        self._floors[floor.floor_id] = floor
+        self._floor_number_to_id[floor.floor_number] = floor.floor_id
         return floor
 
     def find_by_id(self, floor_id: str) -> Optional[Floor]:

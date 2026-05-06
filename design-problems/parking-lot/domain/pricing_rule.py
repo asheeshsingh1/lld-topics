@@ -7,11 +7,16 @@ class PricingRule:
         Represents Dynamic Pricing based on vehicle/slot type.
     """
 
-    def __init__(self, flat: float, hourly: float, slot_type: Vehicle.VehicleType):
+    def __init__(
+        self,
+        slot_type: Vehicle.VehicleType,
+        flat_rate: float,
+        hourly_rate: float
+    ):
         self.pricing_id = str(uuid.uuid4())
-        self.flat_rate = flat
-        self.hourly_rate = hourly
         self.slot_type = slot_type
+        self.flat_rate = flat_rate
+        self.hourly_rate = hourly_rate
 
     def update_rate(self,hourly_rate: float, flat_rate: float):
         self.flat_rate = flat_rate

@@ -8,7 +8,7 @@ class SlotRepository:
         self._slots: Dict[str, ParkingSlot] = {}
 
     def save(self, slot: ParkingSlot) -> ParkingSlot:
-        self._slots[slot.id] = slot
+        self._slots[slot.slot_id] = slot
         return slot
 
     def find_by_id(self, slot_id: str) -> Optional[ParkingSlot]:
