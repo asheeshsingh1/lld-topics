@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List
 from core.log_level import LogLevel
 from core.log_message import LogMessage
+from core.log_formatter import LogFormatter
 
 class LogAppender(ABC):
     @abstractmethod
