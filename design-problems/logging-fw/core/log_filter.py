@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from log_message import LogMessage
-from log_level import LogLevel
+from core.log_message import LogMessage
+from core.log_level import LogLevel
 
 class LogFilter(ABC):
     @abstractmethod

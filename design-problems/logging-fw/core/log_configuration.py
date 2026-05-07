@@ -1,4 +1,4 @@
-from log_level import LogLevel
+from core.log_level import LogLevel
 
 class LogConfiguration:
     def __init__(self, root_level: LogLevel = LogLevel.INFO):

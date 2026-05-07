@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
-from log_level import LogLevel
+from core.log_level import LogLevel
 
 @dataclass(frozen=True)
 class LogMessage:
